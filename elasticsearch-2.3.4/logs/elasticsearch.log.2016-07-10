@@ -1,0 +1,1009 @@
+[2016-07-10 17:07:45,858][INFO ][node                     ] [Thornn] version[2.3.4], pid[4479], build[e455fd0/2016-06-30T11:24:31Z]
+[2016-07-10 17:07:45,862][INFO ][node                     ] [Thornn] initializing ...
+[2016-07-10 17:07:46,768][INFO ][plugins                  ] [Thornn] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2016-07-10 17:07:46,804][INFO ][env                      ] [Thornn] using [1] data paths, mounts [[/ (/dev/sda2)]], net usable_space [41.9gb], net total_space [131.3gb], spins? [no], types [ext4]
+[2016-07-10 17:07:46,804][INFO ][env                      ] [Thornn] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-07-10 17:07:50,587][INFO ][node                     ] [Thornn] initialized
+[2016-07-10 17:07:50,587][INFO ][node                     ] [Thornn] starting ...
+[2016-07-10 17:07:50,775][INFO ][transport                ] [Thornn] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2016-07-10 17:07:50,795][INFO ][discovery                ] [Thornn] elasticsearch/NN5zRPs1S6qOSX6Y86lhfg
+[2016-07-10 17:07:53,931][INFO ][cluster.service          ] [Thornn] new_master {Thornn}{NN5zRPs1S6qOSX6Y86lhfg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-07-10 17:07:54,013][INFO ][http                     ] [Thornn] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2016-07-10 17:07:54,014][INFO ][node                     ] [Thornn] started
+[2016-07-10 17:07:54,102][INFO ][gateway                  ] [Thornn] recovered [1] indices into cluster_state
+[2016-07-10 17:07:55,090][INFO ][cluster.routing.allocation] [Thornn] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[blog][1], [blog][1]] ...]).
+[2016-07-10 18:03:28,057][INFO ][cluster.metadata         ] [Thornn] [blog] update_mapping [post1]
+[2016-07-10 18:04:22,108][DEBUG][action.search            ] [Thornn] [blog][4], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=YTSU5oxuRJWav3W6A27PtQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@116a0ed1] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+Caused by: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 18:04:22,108][DEBUG][action.search            ] [Thornn] [blog][2], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=9UlblByOTQ6RIY_uvhkgjA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@116a0ed1] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+Caused by: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 18:04:22,108][DEBUG][action.search            ] [Thornn] [blog][3], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=Ef7qFJKIRY6VOXYhGf2Csg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@116a0ed1]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+Caused by: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 18:04:22,108][DEBUG][action.search            ] [Thornn] [blog][0], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=fvqb0p-ORP6nm3tSmAyIUw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@116a0ed1] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+Caused by: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 18:04:22,108][DEBUG][action.search            ] [Thornn] [blog][1], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=2CSMIcbnTWiWlgDvRrklSQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@116a0ed1] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+Caused by: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 18:04:22,115][DEBUG][action.search            ] [Thornn] All shards failed for phase: [query]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+Caused by: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 18:04:22,122][WARN ][rest.suppressed          ] path: /_search, params: {size=5, from=0}
+Failed to execute phase [query], all shards failed; shardFailures {[NN5zRPs1S6qOSX6Y86lhfg][blog][0]: RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20]; }{[NN5zRPs1S6qOSX6Y86lhfg][blog][1]: RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20]; }{[NN5zRPs1S6qOSX6Y86lhfg][blog][2]: RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20]; }{[NN5zRPs1S6qOSX6Y86lhfg][blog][3]: RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20]; }{[NN5zRPs1S6qOSX6Y86lhfg][blog][4]: RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20]; }
+	at org.elasticsearch.action.search.AbstractSearchAsyncAction.onFirstPhaseResult(AbstractSearchAsyncAction.java:206)
+	at org.elasticsearch.action.search.AbstractSearchAsyncAction$1.onFailure(AbstractSearchAsyncAction.java:152)
+	at org.elasticsearch.action.ActionListenerResponseHandler.handleException(ActionListenerResponseHandler.java:46)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.processException(TransportService.java:855)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.sendResponse(TransportService.java:833)
+	at org.elasticsearch.transport.TransportService$4.onFailure(TransportService.java:387)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:39)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [Can't get text on a START_ARRAY at 1:20]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.ElasticsearchException.guessRootCauses(ElasticsearchException.java:386)
+	at org.elasticsearch.action.search.SearchPhaseExecutionException.guessRootCauses(SearchPhaseExecutionException.java:152)
+	at org.elasticsearch.action.search.SearchPhaseExecutionException.getCause(SearchPhaseExecutionException.java:99)
+	at java.lang.Throwable.printStackTrace(Throwable.java:665)
+	at java.lang.Throwable.printStackTrace(Throwable.java:721)
+	at org.apache.log4j.DefaultThrowableRenderer.render(DefaultThrowableRenderer.java:60)
+	at org.apache.log4j.spi.ThrowableInformation.getThrowableStrRep(ThrowableInformation.java:87)
+	at org.apache.log4j.spi.LoggingEvent.getThrowableStrRep(LoggingEvent.java:413)
+	at org.apache.log4j.WriterAppender.subAppend(WriterAppender.java:313)
+	at org.apache.log4j.WriterAppender.append(WriterAppender.java:162)
+	at org.apache.log4j.AppenderSkeleton.doAppend(AppenderSkeleton.java:251)
+	at org.apache.log4j.helpers.AppenderAttachableImpl.appendLoopOnAppenders(AppenderAttachableImpl.java:66)
+	at org.apache.log4j.Category.callAppenders(Category.java:206)
+	at org.apache.log4j.Category.forcedLog(Category.java:391)
+	at org.apache.log4j.Category.log(Category.java:856)
+	at org.elasticsearch.common.logging.log4j.Log4jESLogger.internalWarn(Log4jESLogger.java:135)
+	at org.elasticsearch.common.logging.support.AbstractESLogger.warn(AbstractESLogger.java:109)
+	at org.elasticsearch.rest.BytesRestResponse.convert(BytesRestResponse.java:134)
+	at org.elasticsearch.rest.BytesRestResponse.<init>(BytesRestResponse.java:96)
+	at org.elasticsearch.rest.BytesRestResponse.<init>(BytesRestResponse.java:87)
+	at org.elasticsearch.rest.action.support.RestActionListener.onFailure(RestActionListener.java:60)
+	at org.elasticsearch.action.support.TransportAction$1.onFailure(TransportAction.java:95)
+	at org.elasticsearch.action.search.AbstractSearchAsyncAction.raiseEarlyFailure(AbstractSearchAsyncAction.java:294)
+	... 10 more
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	... 3 more
+[2016-07-10 18:04:31,214][DEBUG][action.search            ] [Thornn] [blog][0], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=fvqb0p-ORP6nm3tSmAyIUw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3092aaa1] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+Caused by: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 18:04:31,215][DEBUG][action.search            ] [Thornn] [blog][4], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=YTSU5oxuRJWav3W6A27PtQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3092aaa1]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+Caused by: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 18:04:31,216][DEBUG][action.search            ] [Thornn] All shards failed for phase: [query]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+Caused by: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 18:04:31,214][DEBUG][action.search            ] [Thornn] [blog][3], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=Ef7qFJKIRY6VOXYhGf2Csg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3092aaa1] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+Caused by: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 18:04:31,215][DEBUG][action.search            ] [Thornn] [blog][1], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=2CSMIcbnTWiWlgDvRrklSQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3092aaa1] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+Caused by: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 18:04:31,220][DEBUG][action.search            ] [Thornn] [blog][2], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=9UlblByOTQ6RIY_uvhkgjA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@3092aaa1] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+Caused by: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 18:04:31,217][WARN ][rest.suppressed          ] path: /_search, params: {size=5, from=0}
+Failed to execute phase [query], all shards failed; shardFailures {[NN5zRPs1S6qOSX6Y86lhfg][blog][0]: RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20]; }{[NN5zRPs1S6qOSX6Y86lhfg][blog][1]: RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20]; }{[NN5zRPs1S6qOSX6Y86lhfg][blog][2]: RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20]; }{[NN5zRPs1S6qOSX6Y86lhfg][blog][3]: RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20]; }{[NN5zRPs1S6qOSX6Y86lhfg][blog][4]: RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"match":{"tags":["tag1"]}}}]]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20]; }
+	at org.elasticsearch.action.search.AbstractSearchAsyncAction.onFirstPhaseResult(AbstractSearchAsyncAction.java:206)
+	at org.elasticsearch.action.search.AbstractSearchAsyncAction$1.onFailure(AbstractSearchAsyncAction.java:152)
+	at org.elasticsearch.action.ActionListenerResponseHandler.handleException(ActionListenerResponseHandler.java:46)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.processException(TransportService.java:855)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.sendResponse(TransportService.java:833)
+	at org.elasticsearch.transport.TransportService$4.onFailure(TransportService.java:387)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:39)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [Can't get text on a START_ARRAY at 1:20]; nested: IllegalStateException[Can't get text on a START_ARRAY at 1:20];
+	at org.elasticsearch.ElasticsearchException.guessRootCauses(ElasticsearchException.java:386)
+	at org.elasticsearch.action.search.SearchPhaseExecutionException.guessRootCauses(SearchPhaseExecutionException.java:152)
+	at org.elasticsearch.action.search.SearchPhaseExecutionException.getCause(SearchPhaseExecutionException.java:99)
+	at java.lang.Throwable.printStackTrace(Throwable.java:665)
+	at java.lang.Throwable.printStackTrace(Throwable.java:721)
+	at org.apache.log4j.DefaultThrowableRenderer.render(DefaultThrowableRenderer.java:60)
+	at org.apache.log4j.spi.ThrowableInformation.getThrowableStrRep(ThrowableInformation.java:87)
+	at org.apache.log4j.spi.LoggingEvent.getThrowableStrRep(LoggingEvent.java:413)
+	at org.apache.log4j.WriterAppender.subAppend(WriterAppender.java:313)
+	at org.apache.log4j.WriterAppender.append(WriterAppender.java:162)
+	at org.apache.log4j.AppenderSkeleton.doAppend(AppenderSkeleton.java:251)
+	at org.apache.log4j.helpers.AppenderAttachableImpl.appendLoopOnAppenders(AppenderAttachableImpl.java:66)
+	at org.apache.log4j.Category.callAppenders(Category.java:206)
+	at org.apache.log4j.Category.forcedLog(Category.java:391)
+	at org.apache.log4j.Category.log(Category.java:856)
+	at org.elasticsearch.common.logging.log4j.Log4jESLogger.internalWarn(Log4jESLogger.java:135)
+	at org.elasticsearch.common.logging.support.AbstractESLogger.warn(AbstractESLogger.java:109)
+	at org.elasticsearch.rest.BytesRestResponse.convert(BytesRestResponse.java:134)
+	at org.elasticsearch.rest.BytesRestResponse.<init>(BytesRestResponse.java:96)
+	at org.elasticsearch.rest.BytesRestResponse.<init>(BytesRestResponse.java:87)
+	at org.elasticsearch.rest.action.support.RestActionListener.onFailure(RestActionListener.java:60)
+	at org.elasticsearch.action.support.TransportAction$1.onFailure(TransportAction.java:95)
+	at org.elasticsearch.action.search.AbstractSearchAsyncAction.raiseEarlyFailure(AbstractSearchAsyncAction.java:294)
+	... 10 more
+Caused by: java.lang.IllegalStateException: Can't get text on a START_ARRAY at 1:20
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.text(JsonXContentParser.java:86)
+	at org.elasticsearch.common.xcontent.json.JsonXContentParser.objectText(JsonXContentParser.java:113)
+	at org.elasticsearch.index.query.MatchQueryParser.parse(MatchQueryParser.java:152)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	... 3 more
+[2016-07-10 19:14:00,696][DEBUG][action.search            ] [Thornn] [blog][4], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=YTSU5oxuRJWav3W6A27PtQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7204961f] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"suggest":{"match":{"title":"ipuim"}}}]]; nested: IllegalArgumentException[[suggest] does not support [title]];
+Caused by: SearchParseException[failed to parse search source [{"suggest":{"match":{"title":"ipuim"}}}]]; nested: IllegalArgumentException[[suggest] does not support [title]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: [suggest] does not support [title]
+	at org.elasticsearch.search.suggest.SuggestParseElement.parseInternal(SuggestParseElement.java:84)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parse(SuggestParseElement.java:49)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:14:00,696][DEBUG][action.search            ] [Thornn] [blog][0], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=fvqb0p-ORP6nm3tSmAyIUw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7204961f]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"suggest":{"match":{"title":"ipuim"}}}]]; nested: IllegalArgumentException[[suggest] does not support [title]];
+Caused by: SearchParseException[failed to parse search source [{"suggest":{"match":{"title":"ipuim"}}}]]; nested: IllegalArgumentException[[suggest] does not support [title]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: [suggest] does not support [title]
+	at org.elasticsearch.search.suggest.SuggestParseElement.parseInternal(SuggestParseElement.java:84)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parse(SuggestParseElement.java:49)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:14:00,700][DEBUG][action.search            ] [Thornn] All shards failed for phase: [query]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"suggest":{"match":{"title":"ipuim"}}}]]; nested: IllegalArgumentException[[suggest] does not support [title]];
+Caused by: SearchParseException[failed to parse search source [{"suggest":{"match":{"title":"ipuim"}}}]]; nested: IllegalArgumentException[[suggest] does not support [title]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: [suggest] does not support [title]
+	at org.elasticsearch.search.suggest.SuggestParseElement.parseInternal(SuggestParseElement.java:84)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parse(SuggestParseElement.java:49)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:14:00,696][DEBUG][action.search            ] [Thornn] [blog][2], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=9UlblByOTQ6RIY_uvhkgjA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7204961f] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"suggest":{"match":{"title":"ipuim"}}}]]; nested: IllegalArgumentException[[suggest] does not support [title]];
+Caused by: SearchParseException[failed to parse search source [{"suggest":{"match":{"title":"ipuim"}}}]]; nested: IllegalArgumentException[[suggest] does not support [title]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: [suggest] does not support [title]
+	at org.elasticsearch.search.suggest.SuggestParseElement.parseInternal(SuggestParseElement.java:84)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parse(SuggestParseElement.java:49)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:14:00,696][DEBUG][action.search            ] [Thornn] [blog][3], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=Ef7qFJKIRY6VOXYhGf2Csg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7204961f] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"suggest":{"match":{"title":"ipuim"}}}]]; nested: IllegalArgumentException[[suggest] does not support [title]];
+Caused by: SearchParseException[failed to parse search source [{"suggest":{"match":{"title":"ipuim"}}}]]; nested: IllegalArgumentException[[suggest] does not support [title]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: [suggest] does not support [title]
+	at org.elasticsearch.search.suggest.SuggestParseElement.parseInternal(SuggestParseElement.java:84)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parse(SuggestParseElement.java:49)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:14:00,696][DEBUG][action.search            ] [Thornn] [blog][1], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=2CSMIcbnTWiWlgDvRrklSQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@7204961f] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"suggest":{"match":{"title":"ipuim"}}}]]; nested: IllegalArgumentException[[suggest] does not support [title]];
+Caused by: SearchParseException[failed to parse search source [{"suggest":{"match":{"title":"ipuim"}}}]]; nested: IllegalArgumentException[[suggest] does not support [title]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: [suggest] does not support [title]
+	at org.elasticsearch.search.suggest.SuggestParseElement.parseInternal(SuggestParseElement.java:84)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parse(SuggestParseElement.java:49)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:14:11,580][DEBUG][action.search            ] [Thornn] [blog][4], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=YTSU5oxuRJWav3W6A27PtQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@4735e2f5] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"suggest":{"title":"ipuim"}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+Caused by: SearchParseException[failed to parse search source [{"query":{"suggest":{"title":"ipuim"}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [blog] QueryParsingException[No query registered for [suggest]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:14:11,580][DEBUG][action.search            ] [Thornn] [blog][1], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=2CSMIcbnTWiWlgDvRrklSQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@4735e2f5] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"suggest":{"title":"ipuim"}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+Caused by: SearchParseException[failed to parse search source [{"query":{"suggest":{"title":"ipuim"}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [blog] QueryParsingException[No query registered for [suggest]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:14:11,580][DEBUG][action.search            ] [Thornn] [blog][2], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=9UlblByOTQ6RIY_uvhkgjA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@4735e2f5] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"suggest":{"title":"ipuim"}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+Caused by: SearchParseException[failed to parse search source [{"query":{"suggest":{"title":"ipuim"}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [blog] QueryParsingException[No query registered for [suggest]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:14:11,580][DEBUG][action.search            ] [Thornn] [blog][0], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=fvqb0p-ORP6nm3tSmAyIUw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@4735e2f5] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"suggest":{"title":"ipuim"}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+Caused by: SearchParseException[failed to parse search source [{"query":{"suggest":{"title":"ipuim"}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [blog] QueryParsingException[No query registered for [suggest]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:14:11,580][DEBUG][action.search            ] [Thornn] [blog][3], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=Ef7qFJKIRY6VOXYhGf2Csg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@4735e2f5]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"suggest":{"title":"ipuim"}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+Caused by: SearchParseException[failed to parse search source [{"query":{"suggest":{"title":"ipuim"}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [blog] QueryParsingException[No query registered for [suggest]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:14:11,587][DEBUG][action.search            ] [Thornn] All shards failed for phase: [query]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"suggest":{"title":"ipuim"}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+Caused by: SearchParseException[failed to parse search source [{"query":{"suggest":{"title":"ipuim"}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [blog] QueryParsingException[No query registered for [suggest]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:15:05,437][DEBUG][action.search            ] [Thornn] [blog][4], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=YTSU5oxuRJWav3W6A27PtQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@17db88a3] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}]]; nested: IllegalArgumentException[Analyzer [body] doesn't exists];
+Caused by: SearchParseException[failed to parse search source [{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}]]; nested: IllegalArgumentException[Analyzer [body] doesn't exists];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: Analyzer [body] doesn't exists
+	at org.elasticsearch.search.suggest.SuggestUtils.parseSuggestContext(SuggestUtils.java:244)
+	at org.elasticsearch.search.suggest.phrase.PhraseSuggestParser.parse(PhraseSuggestParser.java:64)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parseInternal(SuggestParseElement.java:94)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parse(SuggestParseElement.java:49)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:15:05,438][DEBUG][action.search            ] [Thornn] [blog][1], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=2CSMIcbnTWiWlgDvRrklSQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@17db88a3] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}]]; nested: IllegalArgumentException[Analyzer [body] doesn't exists];
+Caused by: SearchParseException[failed to parse search source [{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}]]; nested: IllegalArgumentException[Analyzer [body] doesn't exists];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: Analyzer [body] doesn't exists
+	at org.elasticsearch.search.suggest.SuggestUtils.parseSuggestContext(SuggestUtils.java:244)
+	at org.elasticsearch.search.suggest.phrase.PhraseSuggestParser.parse(PhraseSuggestParser.java:64)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parseInternal(SuggestParseElement.java:94)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parse(SuggestParseElement.java:49)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:15:05,438][DEBUG][action.search            ] [Thornn] [blog][2], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=9UlblByOTQ6RIY_uvhkgjA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@17db88a3] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}]]; nested: IllegalArgumentException[Analyzer [body] doesn't exists];
+Caused by: SearchParseException[failed to parse search source [{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}]]; nested: IllegalArgumentException[Analyzer [body] doesn't exists];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: Analyzer [body] doesn't exists
+	at org.elasticsearch.search.suggest.SuggestUtils.parseSuggestContext(SuggestUtils.java:244)
+	at org.elasticsearch.search.suggest.phrase.PhraseSuggestParser.parse(PhraseSuggestParser.java:64)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parseInternal(SuggestParseElement.java:94)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parse(SuggestParseElement.java:49)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:15:05,438][DEBUG][action.search            ] [Thornn] [blog][3], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=Ef7qFJKIRY6VOXYhGf2Csg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@17db88a3] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}]]; nested: IllegalArgumentException[Analyzer [body] doesn't exists];
+Caused by: SearchParseException[failed to parse search source [{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}]]; nested: IllegalArgumentException[Analyzer [body] doesn't exists];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: Analyzer [body] doesn't exists
+	at org.elasticsearch.search.suggest.SuggestUtils.parseSuggestContext(SuggestUtils.java:244)
+	at org.elasticsearch.search.suggest.phrase.PhraseSuggestParser.parse(PhraseSuggestParser.java:64)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parseInternal(SuggestParseElement.java:94)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parse(SuggestParseElement.java:49)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:15:05,438][DEBUG][action.search            ] [Thornn] [blog][0], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=fvqb0p-ORP6nm3tSmAyIUw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@17db88a3]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}]]; nested: IllegalArgumentException[Analyzer [body] doesn't exists];
+Caused by: SearchParseException[failed to parse search source [{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}]]; nested: IllegalArgumentException[Analyzer [body] doesn't exists];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: Analyzer [body] doesn't exists
+	at org.elasticsearch.search.suggest.SuggestUtils.parseSuggestContext(SuggestUtils.java:244)
+	at org.elasticsearch.search.suggest.phrase.PhraseSuggestParser.parse(PhraseSuggestParser.java:64)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parseInternal(SuggestParseElement.java:94)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parse(SuggestParseElement.java:49)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:15:05,442][DEBUG][action.search            ] [Thornn] All shards failed for phase: [query]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}]]; nested: IllegalArgumentException[Analyzer [body] doesn't exists];
+Caused by: SearchParseException[failed to parse search source [{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}]]; nested: IllegalArgumentException[Analyzer [body] doesn't exists];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: Analyzer [body] doesn't exists
+	at org.elasticsearch.search.suggest.SuggestUtils.parseSuggestContext(SuggestUtils.java:244)
+	at org.elasticsearch.search.suggest.phrase.PhraseSuggestParser.parse(PhraseSuggestParser.java:64)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parseInternal(SuggestParseElement.java:94)
+	at org.elasticsearch.search.suggest.SuggestParseElement.parse(SuggestParseElement.java:49)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:15:51,733][DEBUG][action.search            ] [Thornn] [blog][0], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=fvqb0p-ORP6nm3tSmAyIUw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@355dd7cc] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+Caused by: SearchParseException[failed to parse search source [{"query":{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [blog] QueryParsingException[No query registered for [suggest]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:15:51,733][DEBUG][action.search            ] [Thornn] [blog][4], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=YTSU5oxuRJWav3W6A27PtQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@355dd7cc]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+Caused by: SearchParseException[failed to parse search source [{"query":{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [blog] QueryParsingException[No query registered for [suggest]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:15:51,736][DEBUG][action.search            ] [Thornn] All shards failed for phase: [query]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+Caused by: SearchParseException[failed to parse search source [{"query":{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [blog] QueryParsingException[No query registered for [suggest]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:15:51,733][DEBUG][action.search            ] [Thornn] [blog][2], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=9UlblByOTQ6RIY_uvhkgjA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@355dd7cc] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+Caused by: SearchParseException[failed to parse search source [{"query":{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [blog] QueryParsingException[No query registered for [suggest]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:15:51,733][DEBUG][action.search            ] [Thornn] [blog][3], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=Ef7qFJKIRY6VOXYhGf2Csg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@355dd7cc] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+Caused by: SearchParseException[failed to parse search source [{"query":{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [blog] QueryParsingException[No query registered for [suggest]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:15:51,733][DEBUG][action.search            ] [Thornn] [blog][1], node[NN5zRPs1S6qOSX6Y86lhfg], [P], v[6], s[STARTED], a[id=2CSMIcbnTWiWlgDvRrklSQ]: Failed to execute [org.elasticsearch.action.search.SearchRequest@355dd7cc] lastShard [true]
+RemoteTransportException[[Thornn][127.0.0.1:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"query":{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+Caused by: SearchParseException[failed to parse search source [{"query":{"suggest":{"text":"lorem","simple_phrase":{"phrase":{"analyzer":"body","field":"bigram","size":1,"real_word_error_likelihood":0.95,"max_errors":0.5,"gram_size":2,"direct_generator":[{"field":"body","suggest_mode":"always","min_word_length":1}],"highlight":{"pre_tag":"<em>","post_tag":"</em>"}}}}}}]]; nested: QueryParsingException[No query registered for [suggest]];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [blog] QueryParsingException[No query registered for [suggest]]
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:248)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+	... 12 more
+[2016-07-10 19:23:40,678][INFO ][node                     ] [Thornn] stopping ...
+[2016-07-10 19:23:40,764][INFO ][node                     ] [Thornn] stopped
+[2016-07-10 19:23:40,765][INFO ][node                     ] [Thornn] closing ...
+[2016-07-10 19:23:40,777][INFO ][node                     ] [Thornn] closed

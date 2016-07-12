@@ -1,0 +1,6 @@
+[2016-07-12 00:29:16,474][INFO ][cluster.metadata         ] [Judas Traveller] [my_index_name] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2016-07-12 00:29:16,613][INFO ][cluster.routing.allocation] [Judas Traveller] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[my_index_name][4]] ...]).
+[2016-07-12 01:04:47,279][INFO ][node                     ] [Judas Traveller] stopping ...
+[2016-07-12 01:04:47,405][INFO ][node                     ] [Judas Traveller] stopped
+[2016-07-12 01:04:47,405][INFO ][node                     ] [Judas Traveller] closing ...
+[2016-07-12 01:04:47,433][INFO ][node                     ] [Judas Traveller] closed

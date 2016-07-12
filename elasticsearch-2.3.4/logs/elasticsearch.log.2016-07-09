@@ -1,0 +1,40 @@
+[2016-07-09 16:16:56,448][INFO ][node                     ] [Lucas Brand] version[2.3.4], pid[9240], build[e455fd0/2016-06-30T11:24:31Z]
+[2016-07-09 16:16:56,448][INFO ][node                     ] [Lucas Brand] initializing ...
+[2016-07-09 16:16:57,305][INFO ][plugins                  ] [Lucas Brand] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2016-07-09 16:16:57,339][INFO ][env                      ] [Lucas Brand] using [1] data paths, mounts [[/ (/dev/sda2)]], net usable_space [41.8gb], net total_space [131.3gb], spins? [no], types [ext4]
+[2016-07-09 16:16:57,339][INFO ][env                      ] [Lucas Brand] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-07-09 16:17:00,346][INFO ][node                     ] [Lucas Brand] initialized
+[2016-07-09 16:17:00,346][INFO ][node                     ] [Lucas Brand] starting ...
+[2016-07-09 16:17:00,491][INFO ][transport                ] [Lucas Brand] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2016-07-09 16:17:00,500][INFO ][discovery                ] [Lucas Brand] elasticsearch/sfxAts5VRWiY0dj_ZLwTfA
+[2016-07-09 16:17:03,577][INFO ][cluster.service          ] [Lucas Brand] new_master {Lucas Brand}{sfxAts5VRWiY0dj_ZLwTfA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-07-09 16:17:03,600][INFO ][http                     ] [Lucas Brand] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2016-07-09 16:17:03,601][INFO ][node                     ] [Lucas Brand] started
+[2016-07-09 16:17:03,641][INFO ][gateway                  ] [Lucas Brand] recovered [0] indices into cluster_state
+[2016-07-09 16:17:21,783][INFO ][cluster.metadata         ] [Lucas Brand] [blog] creating index, cause [auto(index api)], templates [], shards [5]/[1], mappings [post]
+[2016-07-09 16:17:22,428][INFO ][cluster.routing.allocation] [Lucas Brand] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[blog][4]] ...]).
+[2016-07-09 16:17:22,495][INFO ][cluster.metadata         ] [Lucas Brand] [blog] update_mapping [post]
+[2016-07-09 16:17:59,076][INFO ][cluster.metadata         ] [Lucas Brand] [blog] update_mapping [post]
+[2016-07-09 18:09:05,420][INFO ][node                     ] [Lucas Brand] stopping ...
+[2016-07-09 18:09:05,500][INFO ][node                     ] [Lucas Brand] stopped
+[2016-07-09 18:09:05,500][INFO ][node                     ] [Lucas Brand] closing ...
+[2016-07-09 18:09:05,511][INFO ][node                     ] [Lucas Brand] closed
+[2016-07-09 19:59:26,268][INFO ][node                     ] [Blood Brothers] version[2.3.4], pid[2705], build[e455fd0/2016-06-30T11:24:31Z]
+[2016-07-09 19:59:26,269][INFO ][node                     ] [Blood Brothers] initializing ...
+[2016-07-09 19:59:27,119][INFO ][plugins                  ] [Blood Brothers] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2016-07-09 19:59:27,155][INFO ][env                      ] [Blood Brothers] using [1] data paths, mounts [[/ (/dev/sda2)]], net usable_space [41.8gb], net total_space [131.3gb], spins? [no], types [ext4]
+[2016-07-09 19:59:27,155][INFO ][env                      ] [Blood Brothers] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-07-09 19:59:30,165][INFO ][node                     ] [Blood Brothers] initialized
+[2016-07-09 19:59:30,166][INFO ][node                     ] [Blood Brothers] starting ...
+[2016-07-09 19:59:30,323][INFO ][transport                ] [Blood Brothers] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2016-07-09 19:59:30,332][INFO ][discovery                ] [Blood Brothers] elasticsearch/jMHYlAMzRQm3oBG8uzlsWQ
+[2016-07-09 19:59:33,419][INFO ][cluster.service          ] [Blood Brothers] new_master {Blood Brothers}{jMHYlAMzRQm3oBG8uzlsWQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-07-09 19:59:33,438][INFO ][http                     ] [Blood Brothers] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2016-07-09 19:59:33,439][INFO ][node                     ] [Blood Brothers] started
+[2016-07-09 19:59:33,549][INFO ][gateway                  ] [Blood Brothers] recovered [1] indices into cluster_state
+[2016-07-09 19:59:34,346][INFO ][cluster.routing.allocation] [Blood Brothers] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[blog][3]] ...]).
+[2016-07-09 20:14:37,140][INFO ][cluster.metadata         ] [Blood Brothers] [blog] create_mapping [post1]
+[2016-07-09 22:49:22,603][INFO ][node                     ] [Blood Brothers] stopping ...
+[2016-07-09 22:49:22,664][INFO ][node                     ] [Blood Brothers] stopped
+[2016-07-09 22:49:22,664][INFO ][node                     ] [Blood Brothers] closing ...
+[2016-07-09 22:49:22,680][INFO ][node                     ] [Blood Brothers] closed

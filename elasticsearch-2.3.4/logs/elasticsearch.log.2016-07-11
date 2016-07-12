@@ -1,0 +1,32 @@
+[2016-07-11 18:04:02,683][INFO ][node                     ] [Eternity] version[2.3.4], pid[2272], build[e455fd0/2016-06-30T11:24:31Z]
+[2016-07-11 18:04:02,687][INFO ][node                     ] [Eternity] initializing ...
+[2016-07-11 18:04:03,539][INFO ][plugins                  ] [Eternity] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
+[2016-07-11 18:04:03,575][INFO ][env                      ] [Eternity] using [1] data paths, mounts [[/ (/dev/sda2)]], net usable_space [41.9gb], net total_space [131.3gb], spins? [no], types [ext4]
+[2016-07-11 18:04:03,575][INFO ][env                      ] [Eternity] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-07-11 18:04:06,692][INFO ][node                     ] [Eternity] initialized
+[2016-07-11 18:04:06,694][INFO ][node                     ] [Eternity] starting ...
+[2016-07-11 18:04:06,911][INFO ][transport                ] [Eternity] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2016-07-11 18:04:06,919][INFO ][discovery                ] [Eternity] elasticsearch/mWF23AoeQpeDepjCPEpIgA
+[2016-07-11 18:04:10,057][INFO ][cluster.service          ] [Eternity] new_master {Eternity}{mWF23AoeQpeDepjCPEpIgA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-07-11 18:04:10,136][INFO ][http                     ] [Eternity] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2016-07-11 18:04:10,136][INFO ][node                     ] [Eternity] started
+[2016-07-11 18:04:10,307][INFO ][gateway                  ] [Eternity] recovered [1] indices into cluster_state
+[2016-07-11 18:04:11,391][INFO ][cluster.routing.allocation] [Eternity] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[blog][4], [blog][3], [blog][1], [blog][3], [blog][4], [blog][1], [blog][2]] ...]).
+[2016-07-11 18:16:28,804][INFO ][node                     ] [Eternity] stopping ...
+[2016-07-11 18:16:28,943][INFO ][node                     ] [Eternity] stopped
+[2016-07-11 18:16:28,943][INFO ][node                     ] [Eternity] closing ...
+[2016-07-11 18:16:28,954][INFO ][node                     ] [Eternity] closed
+[2016-07-11 23:58:07,963][INFO ][node                     ] [Judas Traveller] version[2.3.4], pid[3312], build[e455fd0/2016-06-30T11:24:31Z]
+[2016-07-11 23:58:07,964][INFO ][node                     ] [Judas Traveller] initializing ...
+[2016-07-11 23:58:08,773][INFO ][plugins                  ] [Judas Traveller] modules [reindex, lang-expression, lang-groovy], plugins [head], sites [head]
+[2016-07-11 23:58:08,809][INFO ][env                      ] [Judas Traveller] using [1] data paths, mounts [[/ (/dev/sda2)]], net usable_space [41gb], net total_space [131.3gb], spins? [no], types [ext4]
+[2016-07-11 23:58:08,810][INFO ][env                      ] [Judas Traveller] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-07-11 23:58:13,138][INFO ][node                     ] [Judas Traveller] initialized
+[2016-07-11 23:58:13,139][INFO ][node                     ] [Judas Traveller] starting ...
+[2016-07-11 23:58:13,332][INFO ][transport                ] [Judas Traveller] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2016-07-11 23:58:13,339][INFO ][discovery                ] [Judas Traveller] elasticsearch/q5z8biJ5S1GR_nWr16LCYQ
+[2016-07-11 23:58:16,439][INFO ][cluster.service          ] [Judas Traveller] new_master {Judas Traveller}{q5z8biJ5S1GR_nWr16LCYQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-07-11 23:58:16,492][INFO ][http                     ] [Judas Traveller] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2016-07-11 23:58:16,492][INFO ][node                     ] [Judas Traveller] started
+[2016-07-11 23:58:16,664][INFO ][gateway                  ] [Judas Traveller] recovered [1] indices into cluster_state
+[2016-07-11 23:58:17,745][INFO ][cluster.routing.allocation] [Judas Traveller] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[blog][3]] ...]).
